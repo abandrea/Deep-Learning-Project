@@ -42,7 +42,20 @@ The project was implemented using 3 different deep learning models:
 2. ResNet (Residual Neural Network)
 3. DenseNet (Densely Connected Convolutional Networks)
 
-The models were trained on the dataset and evaluated based on their classification accuracy and performance. 
+The models were trained on the dataset and evaluated based on their classification accuracy and performance.
+
+### Reason behind
+* **Convolutional Neural Network (CNN)**: CNNs serve as he fundamental architecture for image classification tasks, making them a natural baseline choice for skin lesion analysis. Their key strength lies in their ability to automatically learn hierarchical feature representations from image data. The convolutional layers detect basic features like edges and textures in early layers, while deeper layers identify more complex patterns specific to different types of skin lesions. 
+
+* **ResNet**: ResNet addresses a critical challenge in deep learning - the degradation problem, where adding more layers can lead to worse performance due to vanishing gradients. For skin lesion classification, this is particularly important because the visual differences between some lesion types can be quite subtle, requiring a deep network to capture fine distinctions. ResNet's skip connections allow the network to maintain gradient flow even in very deep architectures, enabling better feature learning without degradation. This makes it especially effective for capturing both fine-grained details and broader contextual information in skin lesion images.
+
+* **DenseNet**: DenseNet introduces dense connectivity between layers, where each layer receives input from all preceding layers. This architecture is particularly valuable for skin lesion classification for several reasons:
+
+    * Feature reuse: The dense connections allow the network to combine low-level and high-level features effectively, which is crucial for detecting both obvious and subtle lesion characteristics.
+    * Parameter efficiency: DenseNet requires fewer parameters than traditional architectures while maintaining high performance, reducing the risk of overfitting - a common concern when working with medical imaging datasets that may have limited samples for some lesion types.
+    * Strong gradient flow: Similar to ResNet, DenseNet's architecture helps combat the vanishing gradient problem, but through a different mechanism of direct connections between all layers.
+
+
 
 ## Model Explainability
 To provide explanations for the model's predictions, the project used the Grad-CAM (Gradient-weighted Class Activation Mapping) technique. Grad-CAM generates a heatmap that highlights the regions of the image that the model used to make its predictions. This technique helps visualize the model's decision-making process and provides insights into why the model classified a skin lesion as a particular class. 
@@ -60,29 +73,3 @@ Of course, the model is not perfect and there is still room for improvement. How
 - [ResNet: Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
 - [DenseNet: Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993)
 
-<!--
-### Sample Images from Each Class
-Here are some sample images from each of the 7 classes of skin lesions:
-
-#### Melanocytic nevi (nv)
-![Melanocytic nevi](images/nv_sample.jpg)
-
-#### Melanoma (mel)
-![Melanoma](images/mel_sample.jpg)
-
-#### Benign keratosis-like lesions (bkl)
-![Benign keratosis-like lesions](images/bkl_sample.jpg)
-
-#### Basal cell carcinoma (bcc)
-![Basal cell carcinoma](images/bcc_sample.jpg)
-
-#### Actinic keratoses (akiec)
-![Actinic keratoses](images/akiec_sample.jpg)
-
-#### Vascular lesions (vasc)
-![Vascular lesions](images/vasc_sample.jpg)
-
-#### Dermatofibroma (df)
-![Dermatofibroma](images/df_sample.jpg)
-
--->
