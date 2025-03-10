@@ -65,6 +65,11 @@ Taking ispiration from the paper [Dermatologist-like explainable AI enhances tru
 ## Conclusion
 Of course, the model is not perfect and there is still room for improvement. However, the project demonstrates the potential of deep learning models in skin lesion classification and the importance of model explainability in building trust and confidence in AI-based diagnostic systems. By combining deep learning with explainability techniques like Grad-CAM, we can create robust and transparent skin lesion classification systems that can assist clinicians in diagnosing skin lesions accurately and effectively. 
 
+## Authors
+
+- [Tanja Derin](https://github.com/tanjaderin), MSc student in Data Science and Artificial Intelligence at the University of Trieste
+- [Andrea Buscema](https://github.com/abandrea), MSc student in Data Science and Artificial Intelligence at the University of Trieste 
+
 # References
 - [Dermatologist-like explainable AI enhances trust and confidence in diagnosing melanoma](https://www.nature.com/articles/s41467-023-43095-4)
 - [HAM10000 dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)
